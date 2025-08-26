@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import InputText from './components/form/InputText.vue'
+import InputText from './components/form/InputForm.vue'
 
 const meta = {
   component: InputText,
@@ -10,6 +10,8 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
   args: {
     id: 'email',
+    defaultValue: 'isaque@dev.com',
+    label: 'E-mail',
   },
 }
 
