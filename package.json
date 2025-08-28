@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "private": false,
   "type": "module",
+  "repository": {
+    "url": "https://github.com/Isaque-Claudino-dos-Santos/flowers-uai"
+  },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
