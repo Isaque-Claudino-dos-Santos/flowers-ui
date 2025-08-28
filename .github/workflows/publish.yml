@@ -1,4 +1,4 @@
-name: Publish Package to npmjs
+name: Publish Package to NPM
 on:
   release:
     types: [published]
@@ -9,13 +9,18 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout Project
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: "20.x"
+          node-version: "24.x"
           registry-url: "https://registry.npmjs.org/"
           always-auth: true
       - run: npm ci
-      - run: npm publish --provenance --access public
+
+      - name: Publish Package
+        run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
